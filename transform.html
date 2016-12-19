@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+/*2D或3D變形時，會擠壓到其他物件，所以已定設為用絕對定位*/
+        /*.box{position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: #0af;
+        transform:rotate(45deg)scale(1,2);}*/
+      
+/* 3D１變形時記得先加透視點:perspective */
+        /* .box2{position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: #0af;
+        transform:perspective(800px)rotateX(45deg)translateX(500px);} */
+       
+/*加入2D動畫效果*/
+        /*.box3{position:absolute;
+        width: 150px;
+        height: 150px;
+        background-color: #0af;
+        animation: go 10s infinite 5;}
+        @keyframes go{from{top:0;}to{top: 500px;}} */ 
+            
+/*上下左右跑*/
+        /* .box3{
+            position: absolute;
+            width:150px;
+            height:150px;
+            background-color: #0af;
+            animation:go 1s ;
+        }
+      
+        @keyframes go{
+            0%{top:0;left:0;}
+            25%{top:0;left:400px;}
+            50%{top:400x;left:400px;}
+            75%{top:400px;left:0;}
+            100%{top:0;left:0;}
+        }*/
+        
+/*左右水平轉動*/  
+         /*.box3{
+            position: absolute;
+            width:150px;
+            height:150px;
+            background-color: #0af;
+            animation:go 3s infinite alternate ease-In-Out;}
+        @keyframes go{
+            from{transform: rotate(180deg);}
+            to{transform: rotate(360deg);}
+        }*/
+        
+/*原地隨XYZ軸轉動*/    
+         .box3{
+            position: absolute;
+            width:150px;
+            height:150px;
+            background-color: #0af;
+            animation:go 3s infinite;}
+        @keyframes go{
+            0%{
+                transform: perspective(700px)rotateX(0)rotateY(0)rotateZ(15deg);
+            }
+            50%{
+                transform: perspective(700px)rotateX(180deg)rotateY(0)rotateZ(45deg);
+            }
+           100%{
+               transform: perspective(700px)rotateX(180deg)rotateY(180degrotateZ(75deg));
+            }
+         }
+     
+    </style>
+</head>
+<body>
+<!-- <div class="box"></div>-->
+<!--    <div class="box2"></div>-->
+      <div class="box3"></div>
+</body>
+</html>
